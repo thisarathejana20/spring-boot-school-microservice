@@ -12,16 +12,17 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/school")
 public class SchoolController {
     private final SchoolService schoolService;
 
-    @PostMapping("/school")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void createSchool(@RequestBody School school) {
         schoolService.save(school);
     }
 
-    @GetMapping("/school")
+    @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<School> getAll() {
         return schoolService.findAll();
