@@ -1,0 +1,15 @@
+server:
+  port: 8888
+
+spring:
+  profiles:
+    active: native
+  application:
+    name: configServer
+  cloud:
+    config:
+      server:
+        native:
+#          the location of the configuration files
+#          all the .yml files of other microservices will be located here
+          search-locations: classpath:/configurations
