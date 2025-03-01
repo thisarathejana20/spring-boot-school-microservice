@@ -26,4 +26,10 @@ public class StudentService {
                 objectMapper.getTypeFactory().constructCollectionType(List.class, Student.class)
         );
     }
+
+    public List<Student> findBySchoolId(Integer id) {
+        return objectMapper.convertValue(
+                studentRepository.findAllBySchoolId(id),
+                objectMapper.getTypeFactory().constructCollectionType(List.class, Student.class));
+    }
 }
